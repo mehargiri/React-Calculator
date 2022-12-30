@@ -1,0 +1,30 @@
+@use "./abstract/global" as *;
+@use "./abstract//colours" as c;
+
+.calculator {
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark {
+  background-color: c.$black-1;
+  color: c.$white-1;
+}
+
+.light {
+  background-color: c.$white-1;
+  color: c.$black-1;
+}
+
+@media screen and (width >= 500px) {
+  .calculator {
+    max-width: 600px;
+    margin: 5rem auto;
+    max-height: 48rem;
+    border-radius: 2rem;
+  }
+}

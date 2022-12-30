@@ -1,0 +1,60 @@
+@use "../abstract/colours" as c;
+
+.container {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  margin-top: 2.5rem;
+  // align-items: center;
+}
+
+.light-icon,
+.dark-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    font-size: 2rem;
+  }
+}
+
+.light {
+  background-color: c.$white-2;
+  .light-icon {
+    svg {
+      path {
+        fill: c.$black-1;
+      }
+    }
+  }
+
+  .dark-icon {
+    svg {
+      path {
+        fill: c.$gray-1;
+      }
+    }
+  }
+}
+
+.dark {
+  background-color: c.$black-2;
+  .light-icon {
+    svg {
+      path {
+        fill: c.$gray-1;
+      }
+    }
+  }
+
+  .dark-icon {
+    svg {
+      path {
+        fill: c.$white-1;
+      }
+    }
+  }
+}
