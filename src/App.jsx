@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Toggle from "./components/Toggle";
 import "./App.scss";
+import buttonData from "./utils/RawData";
+import Button from "./components/Button";
 
 export default function App() {
   // Toggle between Light and Dark Modes using react's useState
@@ -17,6 +19,14 @@ export default function App() {
     setDarkMode((prevState) => !prevState);
   };
 
+  // Dynamically create calculators buttons based on rawData
+  const btns = [];
+  buttonData.forEach((item) => {
+    btns.push(
+      <Button key={item.id} data={item} light={lightMode} dark={darkMode} />
+    );
+  });
+
   return (
     <main className={`calculator ${lightMode ? "light" : "dark"}`}>
       <Toggle
@@ -25,6 +35,7 @@ export default function App() {
         changeLight={handleLightMode}
         changeDark={handleDarkMode}
       />
+      <div className="btns-container">{btns}</div>
     </main>
   );
 }

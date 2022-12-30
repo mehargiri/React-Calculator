@@ -1,0 +1,41 @@
+@use "../abstract/colours" as c;
+.btn {
+  border: none;
+  font-family: "SemiBold Inter";
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.green {
+  color: c.$green-1;
+}
+
+.pink {
+  color: c.$pink-1;
+}
+
+.light {
+  background-color: c.$white-3;
+  &:hover {
+    background-color: c.$white-4;
+  }
+}
+
+.text-light {
+  color: c.$black-1;
+}
+
+.text-dark {
+  color: c.$white-1;
+}
+
+.dark {
+  background-color: c.$black-3;
+  &:hover {
+    background-color: c.$black-4;
+  }
+}

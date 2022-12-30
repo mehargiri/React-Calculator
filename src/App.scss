@@ -13,11 +13,36 @@
 .dark {
   background-color: c.$black-1;
   color: c.$white-1;
+
+  .btns-container {
+    background-color: c.$black-2;
+  }
 }
 
 .light {
   background-color: c.$white-1;
   color: c.$black-1;
+
+  .btns-container {
+    background-color: c.$white-2;
+  }
+}
+
+.btns-container {
+  margin-top: auto;
+  width: 100%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  button {
+    &:last-child {
+      grid-column: 3/5;
+    }
+  }
 }
 
 @media screen and (width >= 500px) {
@@ -25,6 +50,10 @@
     max-width: 600px;
     margin: 5rem auto;
     max-height: 48rem;
+  }
+
+  .calculator,
+  .btns-container {
     border-radius: 2rem;
   }
 }
