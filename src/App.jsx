@@ -21,18 +21,25 @@ export default function App() {
     setDarkMode((prevState) => !prevState);
   };
 
-  // Dynamically create calculator's buttons based on raw data
-  const btns = [];
-  buttonData.forEach((item) => {
-    btns.push(
-      <Button key={item.id} data={item} light={lightMode} dark={darkMode} />
-    );
-  });
-
   // Adding functionality to buttons using react's useReducer
 
   const [{ previousNum, currentNum, sign, result, includeEqual }, dispatch] =
     useReducer(reducer, initialState);
+
+  // Dynamically create calculator's buttons based on raw data
+  const btns = [];
+  buttonData.forEach((item) => {
+    btns.push(
+      <Button
+        key={item.id}
+        data={item}
+        light={lightMode}
+        dark={darkMode}
+        dispatch={dispatch}
+      />
+    );
+  });
+
   return (
     <main className={`calculator ${lightMode ? "light" : "dark"}`}>
       <Toggle
@@ -40,7 +47,6 @@ export default function App() {
         dark={darkMode}
         changeLight={handleLightMode}
         changeDark={handleDarkMode}
-        dispatch={dispatch}
       />
       <p className="previous-data">
         {previousNum} {sign} {currentNum} {includeEqual ? "=" : ""}
