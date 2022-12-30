@@ -28,6 +28,21 @@
   }
 }
 
+.previous-data {
+  margin-top: min(80px, 20vw);
+  font-family: "Regular Inter";
+  align-self: flex-end;
+  font-size: 2rem;
+  padding-right: 2rem;
+}
+
+.current-data {
+  font-family: "SemiBold Inter";
+  align-self: flex-end;
+  font-size: 4rem;
+  padding-right: 2rem;
+}
+
 .btns-container {
   margin-top: auto;
   width: 100%;
