@@ -7,6 +7,7 @@
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
+ - [Local Installation](#local-installation)
 
 ## Overview
 
@@ -36,3 +37,12 @@ I learned about the react's state system especially the asynchronous nature of r
 ### Continued development
 
 In future, I want to add additional functionalities such as exponentiation, square root, and the three trigonometric functions (cosine, sine, and tangent).
+
+## Local Installation
+
+First clone this repo using `git clone [this repo]`
+
+Next, run `npm install` or `yarn` or `pnpm install` to install all the required node packages
+You may delete the pnpm-lock.yaml file if you are using yarn or npm
+
+Next, run `npm run dev` or `pnpm run dev` or `yarn run dev` to create a local dev environment
